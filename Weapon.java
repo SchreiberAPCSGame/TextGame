@@ -1,19 +1,19 @@
 
 /**
- * Write a description of class Equippable here.
+ * Write a description of class Weapon here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Equippable extends  
+public class Weapon
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Equippable
+     * Constructor for objects of class Weapon
      */
-    public Equippable()
+    public Weapon()
     {
         // initialise instance variables
         x = 0;
