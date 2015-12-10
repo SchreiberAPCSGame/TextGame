@@ -7,16 +7,12 @@
  */
 public class Character
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
-     * Constructor for objects of class Character
-     */
+    * Constructor for objects of class Character
+    */
     public Character()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -27,7 +23,6 @@ public class Character
      */
     public int sampleMethod(int y)
     {
-        // put your code here
-        return x + y;
+        return 1;
     }
 }
