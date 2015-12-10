@@ -9,10 +9,10 @@ public class Main
      /**
      * Constructor for objects of class Main
      */
-    public Main()
+    public void Main()
     {
         // initialise instance variables
-        x = 0;
+        
     }
 
     /**
@@ -24,6 +24,6 @@ public class Main
     public int sampleMethod(int y)
     {
         // put your code here
-        return x + y;
+        return 1;
     }
 }

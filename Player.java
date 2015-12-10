@@ -1,22 +1,23 @@
 
 /**
- * Write a description of class Amor here.
+ * Write a description of class Play here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Armor
+public class Player
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Amor
+     * Constructor for objects of class Play
      */
-    public void Armor()
+    public void Play()
     {
         // initialise instance variables
-        x = 0;
+        ;
+        
     }
 
     /**
