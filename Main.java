@@ -11,25 +11,37 @@ public class Main
     public int health;
     public Room location;
     public Item currentItem;
+    public String tracker;
     /**
      * Constructor for objects of class Main
      */
     public void Main()
     {
-        System.out.println("Enter your name");
-        Scanner kbReader = new Scanner(System.in);
-        String name = kbReader.nextLine();
-        System.out.println("Please choose your level:\nEasy\nImpossible insane");
-        String level = kbReader.nextLine();
-        if(level.equalsIgnoreCase("impossible insane")){
-            System.out.println("You wake up in a cave alone. As you look out the entrance,\nyou see a dinosaur. It looks like a little baby.");
-            System.out.println("The dinosaur pounces on you when you just stare at him.\nGame over.");
-            System.exit(0);
-        }else if(!level.equalsIgnoreCase("easy")){
-            while(!level.equalsIgnoreCase("easy")){
+        while(true){
+            System.out.println("Enter your name");
+            Scanner kbReader = new Scanner(System.in);
+            String name = kbReader.nextLine();
+            System.out.println("Please choose your level:\n\tEasy\n\tMedium\n\tHard\n\tImpossible insane\n\tCompletely Impossible");
+            String level = kbReader.nextLine();
+            if(level.equalsIgnoreCase("completely impossible")){
+                System.out.println("You wake up in a cave alone. As you look out the entrance,\nyou see a dinosaur. It looks like a little baby.");
+                System.out.println("The dinosaur pounces on you when you just stare at him.\nGame over.\n\nWould you like to restart the game (yes to restart or any other key to exit)?");
+                String continueOn = kbReader.nextLine();
+                if(continueOn.equalsIgnoreCase("yes")) continue;
+                else System.exit(0);
+            }else if(level.equalsIgnoreCase("easy")){
+                health = 100;
+            }else if(level.equalsIgnoreCase("medium")){
+                health = 75;
+            }else if(level.equalsIgnoreCase("hard")){
+                health = 65;
+            }else if(level.equalsIgnoreCase("impossible insane")){
+                health = 50;
+            }
+            while(!level.equalsIgnoreCase("easy") || !level.equalsIgnoreCase("medium") || !level.equalsIgnoreCase("hard") || !level.equalsIgnoreCase("impossible insane") || !level.equalsIgnoreCase("completely impossible")){
                 System.out.println("That is not a valid level. Please put in a level again.");
             }
-        }else{
+            System.out.println("Pro tip: during any time of the game, you can type \"show_cheats\" should you ever need help.");
         }
     }
 
@@ -43,12 +55,12 @@ public class Main
         String sentence = typed.nextLine();
         String[] word = sentence.trim().split(" ");
     }
-    
-    public static currentRoom(){
-        return
+
+    public static void currentRoom(){
+
     }
-    
+
     private static void interpretTextRoom(){
-        
+
     }
 }

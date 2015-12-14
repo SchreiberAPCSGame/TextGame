@@ -7,10 +7,9 @@
  */
 public class Room
 {
-    public Room(Items[] s, Character[] p, String n, String d){
-        this.n = n;
-        this.d = d;
-    }    
+    /**public Room(Items[] s, Character[] p, String n, String d){
+        in[][] roomIn = new int[5][5];
+    }*/  
     
     public Room goNorth(){
         return null;
@@ -29,6 +28,8 @@ public class Room
     }
     
     public String getDescription(){
-        return "hi";
+        String r11 = "This is where you you woke and discovered that your time machine was broken.\n There are two possible ways to go; to the jungle or into the caves.";
+        String r12 = "";
+        return r11;
     }
 }
