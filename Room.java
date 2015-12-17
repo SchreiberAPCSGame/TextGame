@@ -2,29 +2,39 @@
 /**
  * Write a description of class Room here.
  * 
- * @author (your name) 
+ * @author John Chen 
  * @version (a version number or a date)
  */
 public class Room
 {
+    public static  String pathTaken = "";
     /**public Room(Items[] s, Character[] p, String n, String d){
         in[][] roomIn = new int[5][5];
     }*/  
     
-    public Room goNorth(){
+    public static Room goNorth(){
+        pathTaken += "North -> ";
         return null;
     }
     
-    public Room goSouth(){
+    public static Room goSouth(){
+        pathTaken += "South -> ";
         return null;
     }
     
-    public Room goEast(){
+    public static Room goEast(){
+        pathTaken += "East -> ";
+        System.out.println(pathTaken);
         return null;
     }
     
-    public Room goWest(){
+    public static Room goWest(){
+        pathTaken += "West -> ";
         return null;
+    }
+    
+    public static void pathTraveled(){
+        System.out.println(pathTaken.substring(0,pathTaken.length()-3));
     }
     
     public String getDescription(){
