@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 /**
  * This runs the program
  * 

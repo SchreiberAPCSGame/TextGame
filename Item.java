@@ -23,10 +23,6 @@ public class Item
         return "";
     }
     
-    //public WhatDoes whatDoes(){
-
-    //}
-    
     public String name(){
         return "";
     }
