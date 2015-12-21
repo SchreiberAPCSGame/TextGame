@@ -8,38 +8,46 @@
 public class Room
 {
     public static  String pathTaken = "";
-    /**public Room(Items[] s, Character[] p, String n, String d){
-        in[][] roomIn = new int[5][5];
-    }*/  
+    public static Room[][] roomIn = new Room[5][5];
+    public static int x = 2;
+    public static int y = 1;
+    public Room(Item[] s, Character[] p, String n, String d){
+        
+    }
     
     public static Room goNorth(){
         pathTaken += "North -> ";
-        return null;
+        y+=1;
+        return roomIn[y][x];
     }
     
     public static Room goSouth(){
         pathTaken += "South -> ";
-        return null;
+        y-=1;
+        return roomIn[y][x];
     }
     
     public static Room goEast(){
         pathTaken += "East -> ";
-        System.out.println(pathTaken);
-        return null;
+        x+=1;
+        return roomIn[y][x];
     }
     
     public static Room goWest(){
         pathTaken += "West -> ";
-        return null;
+        x-=1;
+        return roomIn[y][x];
     }
     
     public static void pathTraveled(){
         System.out.println(pathTaken.substring(0,pathTaken.length()-3));
     }
     
+    private static Room currentRoomPrivate(){
+        return roomIn[y][x];
+    }
+    
     public String getDescription(){
-        String r11 = "This is where you you woke and discovered that your time machine was broken.\n There are two possible ways to go; to the jungle or into the caves.";
-        String r12 = "";
-        return r11;
+        return null;
     }
 }

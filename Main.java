@@ -1,10 +1,7 @@
 import java.util.Scanner;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 /**
- * Write a description of class Main here.
+ * This runs the program
  * 
  * @author John Chen and Isaac Blake 
  * @version 1.0
@@ -19,7 +16,7 @@ public class Main
     /**
      * Constructor for objects of class Main
      */
-    public void Main()
+    public static void main(String[] args)
     {
         while(true){
             boolean restart = true;
