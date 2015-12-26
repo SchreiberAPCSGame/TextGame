@@ -109,15 +109,20 @@ public class Main
                     System.out.print("c_show_path_traveled");
                 break;
                 case "c_items":
-
+                
+                break;
                 case "c_teleport":
-
+                
+                break;
                 case "c_show_room":
 
+                break;
                 case "c_show_hint":
-
+                
+                break;
                 case "c_exit":
                     System.exit(0);
+                    break;
                 case "c_god_mode":
                     if(godMode){
                         if(levelSelected.equals("easy")) health = 100;
@@ -143,6 +148,7 @@ public class Main
                 case "c_show_path_traveled":
                     Room.pathTraveled();
             }
+            break;
         }
     }
 
