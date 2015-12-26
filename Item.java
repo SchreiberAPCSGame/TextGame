@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Item here.
  * 
@@ -15,8 +14,29 @@ public class Item
         
     }
     
-    public String getDescription(){
-        return "";
+    public String getDescription(String name){
+        String getDesc = "";
+        switch (name.toLowerCase()){
+            case "force field":
+                getDesc = "";
+                break;
+            case "explosives":
+                getDesc = "";
+                break;
+            case "lightsaber":
+                getDesc = "";
+                break;
+            case "phaser":
+                getDesc = "";
+                break;
+            case "bicycle":
+                getDesc = "";
+                break;
+            default:
+                getDesc = "";
+                break;
+        }
+        return getDesc;
     }
     
     public String getName(){

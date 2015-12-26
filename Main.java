@@ -1,11 +1,8 @@
 import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 /**
  * This runs the program
  * 
- * @author John Chen and Isaac Blake 
+ * @author John Chen
  * @version 1.0
  */
 public class Main
