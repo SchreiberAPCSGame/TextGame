@@ -6,19 +6,22 @@
  */
 public class Item
 {
+    String name;
+    String description;
     /**
      * Constructor for objects of class Item
      */
     public Item(String name, String description)
     {
-        
+        this.name = name;
+        this.description = description;
     }
     
     public String getDescription(String name){
         String getDesc = "";
         switch (name.toLowerCase()){
             case "force field":
-                getDesc = "";
+                getDesc = "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.";
                 break;
             case "explosives":
                 getDesc = "";
@@ -32,6 +35,20 @@ public class Item
             case "bicycle":
                 getDesc = "";
                 break;
+            case "rope":
+                getDesc = "";
+            case "axe":
+                getDesc = "";
+            case "vortex time distorter":
+                getDesc = "";
+            case "harpax power stone":
+                getDesc = "";
+            case "ciceria portal":
+                getDesc = "";
+            case "nasennia hyper drive":
+                getDesc = "";
+            case "maximia dialator":
+                getDesc = "";
             default:
                 getDesc = "";
                 break;
