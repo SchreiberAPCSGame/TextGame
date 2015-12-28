@@ -64,6 +64,7 @@ public class Main
                     String continueOn = kbReader.nextLine();
                     if(continueOn.equalsIgnoreCase("yes")) {
                         restart = false;
+                        System.out.print('\u000C');
                     }
                 }
                 readCommand(response);
