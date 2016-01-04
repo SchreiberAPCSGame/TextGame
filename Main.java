@@ -12,7 +12,8 @@ public class Main
     public static double health = 100;
     public static boolean godMode = false;
     public static String levelSelected;
-    public Item Item[] = new Item[100];
+    public static Item Item[];
+    public Item inventory[];
     /**
      * Constructor for objects of class Main
      */
@@ -20,7 +21,9 @@ public class Main
     {
         while(true){
             Item forceField = new Item("Force Field", "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.");
+            Item[0] = forceField;
             Item explosives = new Item("Explosives", "This can blow up walls");
+            Item[1] = explosives;
             Item lightSaber = new Item("Light Saber", "A hot rod of plasma capable of cutting down enemies");
             boolean restart = true;
             System.out.println("Enter your name");

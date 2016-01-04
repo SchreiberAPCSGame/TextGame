@@ -6,9 +6,13 @@
  */
 public class Character
 {
-    /**
-    * Constructor for objects of class Character
-    */
+    String name;
+    String description;
+    public Character(String name, String description, Item[] inventory){
+        this.name = name;
+        this.description = description;
+    }
+    
     public String getDescription()
     {
         return "";
