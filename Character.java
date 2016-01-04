@@ -1,8 +1,7 @@
-
 /**
  * Write a description of class Character here.
  * 
- * @author (your name) 
+ * @author John Chen 
  * @version (a version number or a date)
  */
 public class Character
@@ -10,19 +9,29 @@ public class Character
     /**
     * Constructor for objects of class Character
     */
-    public Character()
+    public String getDescription()
     {
-        
+        return "";
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public String getName()
     {
-        return 1;
+        return "";
+    }
+    
+    public String talk(String dialogue){
+        return null;
+    }
+    
+    public String name(){
+        return null;
+    }
+    
+    public String description(){
+        return null;
+    }
+    
+    public Item inventory(){
+        return null;
     }
 }

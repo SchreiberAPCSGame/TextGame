@@ -9,13 +9,13 @@ public class Player
     /**
      * Constructor for objects of class Play
      */
-    public void Player()
+    public String getName(String name)
     {
-       
+       return name;
     }
 
-    public int sampleMethod(int y)
+    public String getDescription()
     {
-        return 0;
+        return null;
     }
 }

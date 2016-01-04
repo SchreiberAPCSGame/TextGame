@@ -1,8 +1,7 @@
-
 /**
- * Write a description of class Amor here.
+ * Write a description of class Armor here.
  * 
- * @author John Chen 
+ * @author John Chen and Isaac Blake
  * @version (a version number or a date)
  */
 public class Armor

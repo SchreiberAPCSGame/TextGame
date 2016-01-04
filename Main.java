@@ -160,4 +160,10 @@ public class Main
     private static void interpretTextRoom(){
 
     }
+    
+    private Room roomArray(){
+        return null;
+    }
+    
+    
 }
