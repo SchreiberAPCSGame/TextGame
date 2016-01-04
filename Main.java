@@ -96,7 +96,7 @@ public class Main
                 }
                 break;
                 case "show_cheats":
-                    System.out.println("\nHere are the different cheats you can do:\n");
+                    System.out.println("\nHere are the different cheats you can use:\n");
                     System.out.print("c_items\t\t");
                     System.out.print("c_telport\t   ");
                     System.out.println("c_show_room");
@@ -153,7 +153,7 @@ public class Main
     }
 
     public static Room currentRoom(){
-        return null;
+        
     }
 
     private static void interpretTextRoom(){
