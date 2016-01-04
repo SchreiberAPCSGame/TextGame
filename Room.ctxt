@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=void\ pathTraveled()
 comment6.params=
 comment6.target=java.lang.String\ getDescription()
-numComments=7
+comment7.params=something
+comment7.target=void\ canGo(Room)
+numComments=8

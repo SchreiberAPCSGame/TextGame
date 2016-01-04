@@ -1,7 +1,7 @@
 /**
  * Write a description of class Item here.
  * 
- * @author (your name) 
+ * @author John Chen
  * @version (a version number or a date)
  */
 public class Item
@@ -17,7 +17,11 @@ public class Item
         this.description = description;
     }
     
-    public String getDescription(String name){
+    public String getDescription(){
+        return this.description;
+    }
+    
+    private String getDescription1(){
         String getDesc = "";
         switch (name.toLowerCase()){
             case "force field":

@@ -45,4 +45,8 @@ public class Room
     public String getDescription(){
         return null;
     }
+    
+    private void canGo(Room something){
+        
+    }
 }
