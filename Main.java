@@ -149,31 +149,31 @@ public class Main
     }
     
     private static void createRooms(){
-        Room o00 = new Room(Item, character, "o00", "AD");
-        Room o01 = new Room(Item, character, "o01", "AD");
-        Room o02 = new Room(Item, character, "o02", "AD");
-        Room o03 = new Room(Item, character, "o03", "AD");
-        Room o04 = new Room(Item, character, "o04", "AD");
-        Room o10 = new Room(Item, character, "o10", "AD");
-        Room o11 = new Room(Item, character, "o11", "AD");
-        Room o12 = new Room(Item, character, "o12", "AD");
-        Room o13 = new Room(Item, character, "o13", "AD");
-        Room o14 = new Room(Item, character, "o14", "AD");
-        Room o20 = new Room(Item, character, "o20", "AD");
-        Room o21 = new Room(Item, character, "o21", "AD");
-        Room o22 = new Room(Item, character, "o22", "AD");
-        Room o23 = new Room(Item, character, "o23", "AD");
-        Room o24 = new Room(Item, character, "o24", "AD");
-        Room o30 = new Room(Item, character, "o30", "AD");
-        Room o31 = new Room(Item, character, "o31", "AD");
-        Room o32 = new Room(Item, character, "o32", "AD");
-        Room o33 = new Room(Item, character, "o33", "AD");
-        Room o34 = new Room(Item, character, "o34", "AD");
-        Room o40 = new Room(Item, character, "o40", "AD");
-        Room o41 = new Room(Item, character, "o41", "AD");
-        Room o42 = new Room(Item, character, "o42", "AD");
-        Room o43 = new Room(Item, character, "o43", "AD");
-        Room o44 = new Room(Item, character, "o44", "AD");
+        Room o00 = new Room(Item, character, "o00", "Here lies the ultimate boss and the most important part of the time machine.");
+        Room o01 = new Room(Item, character, "o01", "Big aliens are located here. It is suggested that you have strong armor and weapons equipped.");
+        Room o02 = new Room(Item, character, "o02", "A wall stands in you're way. What are you going to do about it?");
+        Room o03 = new Room(Item, character, "o03", "Big and mean, these aliens located here aren't friendly.");
+        Room o04 = new Room(Item, character, "o04", "A sparse forest.");
+        Room o10 = new Room(Item, character, "o10", "A dark cave room.");
+        Room o11 = new Room(Item, character, "o11", "An indestructable cave wall");
+        Room o12 = new Room(Item, character, "o12", "An impassable mountain.");
+        Room o13 = new Room(Item, character, "o13", "The tar pits are a perilous place.");
+        Room o14 = new Room(Item, character, "o14", "A dense jungle with danger lurking in every shadow.");
+        Room o20 = new Room(Item, character, "o20", "Part a the cave entrance. This is the first step into the caves.");
+        Room o21 = new Room(Item, character, "o21", "The mouth of the cave. You spawn here.");
+        Room o22 = new Room(Item, character, "o22", "The jungles here contain an unexpected surprise.");
+        Room o23 = new Room(Item, character, "o23", "More jungle, more unknown.");
+        Room o24 = new Room(Item, character, "o24", "This is quite and explosive part of the jungle.");
+        Room o30 = new Room(Item, character, "o30", "A dark cave. Who knows who/what lurks here?");
+        Room o31 = new Room(Item, character, "o31", "A big cavern.");
+        Room o32 = new Room(Item, character, "o32", "Jungle. Nothing but jungle, right?");
+        Room o33 = new Room(Item, character, "o33", "A passable mountain. But don't be so sure that you'll make it out alive.");
+        Room o34 = new Room(Item, character, "o34", "A one way coridorr.");
+        Room o40 = new Room(Item, character, "o40", "Another room to the cave. Who would have thought?");
+        Room o41 = new Room(Item, character, "o41", "A big pool of water.");
+        Room o42 = new Room(Item, character, "o42", "More boring cave.");
+        Room o43 = new Room(Item, character, "o43", "A dense jungle. Did I mention that it was dark?");
+        Room o44 = new Room(Item, character, "o44", "More forest, but much more interesting than the others.");
     }
     
     private static void createItems(){
