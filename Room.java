@@ -10,10 +10,10 @@ public class Room
     public static Room[][] roomIn = new Room[5][5];
     public static int x = 2;
     public static int y = 1;
-    public static String name = "00";
+    public static String name;
     public static String description;
     public static Room current;
-    public Room(Item[] s, Character[] p, String n, String d){
+    public Room(Item[] s, Character[] p, String name, String description){
         this.name = name;
         this.description = description;
     }
@@ -61,7 +61,7 @@ public class Room
         boolean canGoSouth = false;
         boolean canGoEast = false;
         boolean canGoWest = false;
-        switch(name){
+        switch(name.substring(1,3)){
             case "00":
             canGoNorth = false;
             canGoSouth = false;
@@ -213,7 +213,7 @@ public class Room
             canGoWest = true;
             break;
         }
-        String something = "";
+        String something = "adf";
         switch(direction.toLowerCase()){
             case "north":
             if(canGoNorth) return "";
@@ -228,6 +228,7 @@ public class Room
             if(canGoEast) return "";
             else something= "You cannot go that direction.";
         }
+        System.out.println(something);
         return something;
     }
 }
