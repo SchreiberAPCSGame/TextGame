@@ -10,14 +10,20 @@ public class Room
     public static Room[][] roomIn = new Room[5][5];
     public static int x = 2;
     public static int y = 1;
-    public static String name;
+    public static String name = "00";
     public static String description;
+    public static Room current;
     public Room(Item[] s, Character[] p, String n, String d){
         this.name = name;
         this.description = description;
     }
+    
+    private void currentRoom(){
+        Room current = roomIn[y][x];
+    }
 
     public static Room goNorth(){
+        current.canGo("north");
         pathTaken += "North -> ";
         y+=1;
         return roomIn[y][x];
@@ -49,12 +55,12 @@ public class Room
         return null;
     }
 
-    private String canGo(Room y, String direction){
+    private String canGo(String direction){
         boolean canGoNorth = false;
         boolean canGoSouth = false;
         boolean canGoEast = false;
         boolean canGoWest = false;
-        switch(Room.name){
+        switch(name){
             case "00":
             canGoNorth = false;
             canGoSouth = false;
@@ -65,13 +71,13 @@ public class Room
             canGoNorth = false;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "02":
             canGoNorth = false;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "03":
             canGoNorth = false;
@@ -81,122 +87,98 @@ public class Room
             break;
             case "04":
             canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "05":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
+            canGoSouth = true;
+            canGoEast = false;
+            canGoWest = true;
             break;
             case "10":
             canGoNorth = false;
-            canGoSouth = false;
+            canGoSouth = true;
             canGoEast = true;
             canGoWest = false;
             break;
             case "11":
             canGoNorth = false;
             canGoSouth = false;
-            canGoEast = true;
+            canGoEast = false;
             canGoWest = false;
             break;
             case "12":
             canGoNorth = false;
             canGoSouth = false;
-            canGoEast = true;
+            canGoEast = false;
             canGoWest = false;
             break;
             case "13":
-            canGoNorth = false;
-            canGoSouth = false;
+            canGoNorth = true;
+            canGoSouth = true;
             canGoEast = true;
             canGoWest = false;
             break;
             case "14":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "15":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
+            canGoNorth = true;
+            canGoSouth = true;
+            canGoEast = false;
             canGoWest = false;
             break;
             case "20":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
+            canGoNorth = true;
+            canGoSouth = true;
+            canGoEast = false;
             canGoWest = false;
             break;
             case "21":
             canGoNorth = false;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "22":
             canGoNorth = false;
-            canGoSouth = false;
+            canGoSouth = true;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "23":
             canGoNorth = false;
-            canGoSouth = false;
+            canGoSouth = true;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "24":
             canGoNorth = false;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
-            break;
-            case "25":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "30":
-            canGoNorth = false;
+            canGoNorth = true;
             canGoSouth = false;
             canGoEast = true;
             canGoWest = false;
             break;
             case "31":
             canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
+            canGoSouth = true;
+            canGoEast = false;
+            canGoWest = true;
             break;
             case "32":
-            canGoNorth = false;
+            canGoNorth = true;
             canGoSouth = false;
             canGoEast = true;
             canGoWest = false;
             break;
             case "33":
-            canGoNorth = false;
-            canGoSouth = false;
+            canGoNorth = true;
+            canGoSouth = true;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "34":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "35":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
+            canGoNorth = true;
+            canGoSouth = true;
+            canGoEast = false;
             canGoWest = false;
             break;
             case "40":
@@ -206,70 +188,28 @@ public class Room
             canGoWest = false;
             break;
             case "41":
-            canGoNorth = false;
+            canGoNorth = true;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "42":
             canGoNorth = false;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "43":
-            canGoNorth = false;
+            canGoNorth = true;
             canGoSouth = false;
             canGoEast = true;
-            canGoWest = false;
+            canGoWest = true;
             break;
             case "44":
-            canGoNorth = false;
+            canGoNorth = true;
             canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "45":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "50":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "51":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "52":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "53":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "54":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "55":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
+            canGoEast = false;
+            canGoWest = true;
             break;
         }
         String something = "";

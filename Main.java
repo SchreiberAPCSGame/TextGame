@@ -19,12 +19,6 @@ public class Main
     public static void main(String[] args)
     {
         while(true){
-            Item forceField = new Item("Force Field", "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.");
-            Item[0] = forceField;
-            Item explosives = new Item("Explosives", "This can blow up walls");
-            Item[1] = explosives;
-            Item lightSaber = new Item("Light Saber", "A hot rod of plasma capable of cutting down enemies");
-            Item [2] = lightSaber;
             boolean restart = true;
             System.out.println("Enter your name");
             Scanner kbReader = new Scanner(System.in);
