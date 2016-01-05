@@ -11,8 +11,9 @@ public class Main
     public static double health = 100;
     public static boolean godMode = false;
     public static String levelSelected;
-    public static Item Item[];
-    public Item inventory[] = new Item[100];
+    public static Item Item[] = new Item[100];
+    public static Character character[] = new Character[100];
+    public static Room room[] = new Room[25];
     /**
      * Constructor for objects of class Main
      */
@@ -88,39 +89,22 @@ public class Main
                 case "moonwalk":
                 case "skip":
                 if(word[i+1].equalsIgnoreCase("north")){
-                    System.out.println(Room.goNorth());
+                    Room.goNorth();
                 }else if(word[i+1].equalsIgnoreCase("south")){
-                    System.out.println(Room.goSouth());
+                    Room.goSouth();
                 }else if(word[i+1].equalsIgnoreCase("west")){
-                    System.out.println(Room.goWest());
+                    Room.goWest();
                 }else if(word[i+1].equalsIgnoreCase("east")){
-                    System.out.println(Room.goEast());
+                    Room.goEast();
                 }
                 break;
                 case "show_cheats":
                     System.out.println("\nHere are the different cheats you can do:\n");
-                    System.out.print("c_items\t\t");
-                    System.out.print("c_telport\t   ");
-                    System.out.println("c_show_room");
-                    System.out.print("c_show_hint\t");
                     System.out.print("c_exit\t\t   ");
                     System.out.println("c_restart\t   ");
                     System.out.print("c_god_mode\t");
                     System.out.println("c_show_health");
-                    System.out.print("c_show_map\t");
                     System.out.print("c_show_path_traveled");
-                break;
-                case "c_items":
-                
-                break;
-                case "c_teleport":
-                
-                break;
-                case "c_show_room":
-
-                break;
-                case "c_show_hint":
-                
                 break;
                 case "c_exit":
                     System.exit(0);
@@ -154,10 +138,15 @@ public class Main
     }
 
     public static Room currentRoom(){
-        return null;
+        Room currentRoomIn = new Room(Item, character, "", "");
+        return currentRoomIn.currentRoom1();
     }
 
     private static void interpretTextRoom(){
 
+    }
+    
+    private void createRoom(){
+        
     }
 }

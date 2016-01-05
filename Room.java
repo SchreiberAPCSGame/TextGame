@@ -18,12 +18,13 @@ public class Room
         this.description = description;
     }
     
-    private void currentRoom(){
-        Room current = roomIn[y][x];
+    public Room currentRoom1(){
+        this.current = roomIn[y][x];
+        return current;
     }
 
     public static Room goNorth(){
-        current.canGo("north");
+        Room.canGo("north");
         pathTaken += "North -> ";
         y+=1;
         return roomIn[y][x];
@@ -55,7 +56,7 @@ public class Room
         return null;
     }
 
-    private String canGo(String direction){
+    private static String canGo(String direction){
         boolean canGoNorth = false;
         boolean canGoSouth = false;
         boolean canGoEast = false;
