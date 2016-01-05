@@ -101,39 +101,39 @@ public class Main
                 }
                 break;
                 case "show_cheats":
-                    System.out.println("\nHere are the different cheats you can do:\n");
-                    System.out.print("c_exit\t\t   ");
-                    System.out.println("c_restart\t   ");
-                    System.out.print("c_god_mode\t");
-                    System.out.println("c_show_health");
-                    System.out.print("c_show_path_traveled");
+                System.out.println("\nHere are the different cheats you can do:\n");
+                System.out.print("c_exit\t\t   ");
+                System.out.println("c_restart\t   ");
+                System.out.print("c_god_mode\t");
+                System.out.println("c_show_health");
+                System.out.print("c_show_path_traveled");
                 break;
                 case "c_exit":
-                    System.exit(0);
-                    break;
+                System.exit(0);
+                break;
                 case "c_god_mode":
-                    if(godMode){
-                        if(levelSelected.equals("easy")) health = 100;
-                        else if(levelSelected.equals("medium")) health = 75;
-                        else if(levelSelected.equals("hard")) health = 65;
-                        else health = 50;
-                        godMode = false;
-                        System.out.println("God mode disabled (Type \"c_god_mode\" to re-enable god mode)");
-                    }else{
+                if(godMode){
+                    if(levelSelected.equals("easy")) health = 100;
+                    else if(levelSelected.equals("medium")) health = 75;
+                    else if(levelSelected.equals("hard")) health = 65;
+                    else health = 50;
+                    godMode = false;
+                    System.out.println("God mode disabled (Type \"c_god_mode\" to re-enable god mode)");
+                }else{
                     health = Double.POSITIVE_INFINITY;
                     System.out.println("God mode enabled (Type \"c_god_mode\" to turn god mode off)");
                     godMode = true;
                 }
-                    break;
+                break;
                 case "c_show_health":
-                    if(godMode){
+                if(godMode){
                     System.out.println(health);
                 }else{
                     System.out.println((int)health);
                 }
-                    break;
+                break;
                 case "c_show_path_traveled":
-                    Room.pathTraveled();
+                Room.pathTraveled();
             }
             break;
         }
@@ -147,7 +147,7 @@ public class Main
     private static void interpretTextRoom(){
 
     }
-    
+
     private static void createRooms(){
         Room o00 = new Room(Item, character, "o00", "Here lies the ultimate boss and the most important part of the time machine.");
         Room o01 = new Room(Item, character, "o01", "Big aliens are located here. It is suggested that you have strong armor and weapons equipped.");
@@ -175,10 +175,10 @@ public class Main
         Room o43 = new Room(Item, character, "o43", "A dense jungle. Did I mention that it was dark?");
         Room o44 = new Room(Item, character, "o44", "More forest, but much more interesting than the others.");
     }
-    
+
     private static void createItems(){
         Item forceField = new Item("Force Field", "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.");
-        Item explosives = new Item("Explosives", "Low intensisty explosives that can used once to blow up walls");
+        Item explosives = new Item("Explosives", "Low intensity explosives that can used once to blow up walls");
         Item lightSaber = new Item("Lightsaber", "Plasma blade powered by a kyber crystal, also is very powerful");
         Item phaser = new Item("Phaser", "Particle light gun capable of shooting through any substance");
         Item rope = new Item("Rope", "Very long piece or rope made from the strongest coth on the planet");
@@ -196,5 +196,29 @@ public class Main
         Item[6] = harpaxPowerStone;
         Item[7] = nasenniaHyperDrive;
         Item[8] = maximiaDilator;
+        Item items00[] = new Item[5];
+        items00[0] = Item[6];
+        /*Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        Item items00[] = new Item[5];
+        */
+    }
+    
+    private static void createCharacters(){
+        ActualCharacter tRex = new ActualCharacter("T-rex", "Fearsome and giant, the T-rex rules the jungles", 200.0);
+        ActualCharacter velociraptor = new ActualCharacter("Velociraptor", "Fast powerful, be wary of these fellows.", 35.0);
+        ActualCharacter stegosaurus = new ActualCharacter("Stegosaurus", "Large and powerful, they can be pretty mean. Thank the stars that they are herbivors.", 70.0);
+        ActualCharacter pterodactyl = new ActualCharacter("Pterodactyl", "Death from above", 30.0);
+        ActualCharacter eT = new ActualCharacter("E.T", "\"E.T phone home\". Seems pretty friendly.", 10.0);
+        ActualCharacter lGM = new ActualCharacter("Little Green Men", "They are so cute with their three eyes that you'll want to hug them.", 15.0);
+        ActualCharacter shadowHunter = new ActualCharacter("Little Green Men", "They are so cute with their three eyes that you'll want to hug them.", 15.0);
     }
 }

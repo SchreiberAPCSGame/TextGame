@@ -4,21 +4,17 @@
  * @author John Chen 
  * @version (a version number or a date)
  */
-public class Character
+public class ActualCharacter
 {
     String name;
     String description;
     double health;
-    Item inventory[] = new Item[100];
-    public Character(String name, String description, Item[] inventory){
+    public ActualCharacter(String name, String description, double health){
         this.name = name;
         this.description = description;
-    }
-    
-    public Character(double health){
         this.health = health;
     }
-    
+
     public String getDescription()
     {
         return this.description;
@@ -39,6 +35,10 @@ public class Character
     
     public String description(){
         return this.description;
+    }
+    
+    public double getHealth(){
+        return this.health;
     }
     
     public Item inventory(){
