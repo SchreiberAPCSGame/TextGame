@@ -12,7 +12,7 @@ public class Armor
      */
     public String getDescription()
     {
-        String fieldDesc = super.getDescription(forcefield);
+        String fieldDesc = super.getDescription();
         return "";
     }
 

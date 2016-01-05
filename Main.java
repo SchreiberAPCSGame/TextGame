@@ -7,6 +7,17 @@ import java.util.Scanner;
  */
 public class Main
 {
+    /**Force Field
+    Explosives
+    Lightsaber
+    Phaser
+    Rope
+    Stone tools(axe, hammer,etc) 
+    Vortex time distorter 
+    Harpax power Stone
+    Ciceria portal
+    Nasennia hyper drive
+    Maximia Dilator**/
     public int score;
     public static int numCheats;
     public static double health = 100;
@@ -18,6 +29,9 @@ public class Main
     public static void main(String[] args)
     {
         while(true){
+            Item forceField = new Item("Force Field","If equipted, player will not take damage for one hit. Once hit, force field is destroyed");
+            Item explosives = new Item("Explosives", "Low intensisty explosives that can used once to blow up walls");
+            Item explosives = new Item("Explosives", "Low intensisty explosives that can used once to blow up walls");
             boolean restart = true;
             System.out.println("Enter your name");
             Scanner kbReader = new Scanner(System.in);
@@ -96,64 +110,64 @@ public class Main
                 }
                 break;
                 case "show_cheats":
-                    System.out.println("\nHere are the different cheats you can use:\n");
-                    System.out.print("c_items\t\t");
-                    System.out.print("c_telport\t   ");
-                    System.out.println("c_show_room");
-                    System.out.print("c_show_hint\t");
-                    System.out.print("c_exit\t\t   ");
-                    System.out.println("c_restart\t   ");
-                    System.out.print("c_god_mode\t");
-                    System.out.println("c_show_health");
-                    System.out.print("c_show_map\t");
-                    System.out.print("c_show_path_traveled");
+                System.out.println("\nHere are the different cheats you can use:\n");
+                System.out.print("c_items\t\t");
+                System.out.print("c_telport\t   ");
+                System.out.println("c_show_room");
+                System.out.print("c_show_hint\t");
+                System.out.print("c_exit\t\t   ");
+                System.out.println("c_restart\t   ");
+                System.out.print("c_god_mode\t");
+                System.out.println("c_show_health");
+                System.out.print("c_show_map\t");
+                System.out.print("c_show_path_traveled");
                 break;
                 case "c_items":
-                
+
                 break;
                 case "c_teleport":
-                
+
                 break;
                 case "c_show_room":
 
                 break;
                 case "c_show_hint":
-                
+
                 break;
                 case "c_exit":
-                    System.exit(0);
-                    break;
+                System.exit(0);
+                break;
                 case "c_god_mode":
-                    if(godMode){
-                        if(levelSelected.equals("easy")) health = 100;
-                        else if(levelSelected.equals("medium")) health = 75;
-                        else if(levelSelected.equals("hard")) health = 65;
-                        else health = 50;
-                        godMode = false;
-                        System.out.println("God mode disabled (Type \"c_god_mode\" to re-enable god mode)");
-                    }else{
+                if(godMode){
+                    if(levelSelected.equals("easy")) health = 100;
+                    else if(levelSelected.equals("medium")) health = 75;
+                    else if(levelSelected.equals("hard")) health = 65;
+                    else health = 50;
+                    godMode = false;
+                    System.out.println("God mode disabled (Type \"c_god_mode\" to re-enable god mode)");
+                }else{
                     health = Double.POSITIVE_INFINITY;
                     System.out.println("God mode enabled (Type \"c_god_mode\" to turn god mode off)");
                     numCheats+=1;
                     godMode = true;
                 }
-                    break;
+                break;
                 case "c_show_health":
-                    if(godMode){
+                if(godMode){
                     System.out.println(health);
                 }else{
                     System.out.println((int)health);
                 }
-                    break;
+                break;
                 case "c_show_path_traveled":
-                    Room.pathTraveled();
+                Room.pathTraveled();
             }
             break;
         }
     }
 
     public static Room currentRoom(){
-        
+
     }
 
     private static void interpretTextRoom(){
