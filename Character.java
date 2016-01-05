@@ -15,16 +15,16 @@ public class Character
     
     public String getDescription()
     {
-        return "";
+        return this.description;
     }
 
     public String getName()
     {
-        return "";
+        return this.name;
     }
     
     public String talk(String dialogue){
-        return null;
+        return "Hello, there";
     }
     
     public String name(){
@@ -32,7 +32,7 @@ public class Character
     }
     
     public String description(){
-        return null;
+        return this.description;
     }
     
     public Item inventory(){

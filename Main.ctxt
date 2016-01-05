@@ -10,6 +10,4 @@ comment3.params=
 comment3.target=Room\ currentRoom()
 comment4.params=
 comment4.target=void\ interpretTextRoom()
-comment5.params=
-comment5.target=Room\ roomArray()
-numComments=6
+numComments=5

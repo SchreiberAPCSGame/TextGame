@@ -8,12 +8,11 @@ import java.util.Scanner;
 public class Main
 {
     public int score;
-    public static int numCheats;
     public static double health = 100;
     public static boolean godMode = false;
     public static String levelSelected;
     public static Item Item[];
-    public Item inventory[];
+    public Item inventory[] = new Item[100];
     /**
      * Constructor for objects of class Main
      */
@@ -25,6 +24,7 @@ public class Main
             Item explosives = new Item("Explosives", "This can blow up walls");
             Item[1] = explosives;
             Item lightSaber = new Item("Light Saber", "A hot rod of plasma capable of cutting down enemies");
+            Item [2] = lightSaber;
             boolean restart = true;
             System.out.println("Enter your name");
             Scanner kbReader = new Scanner(System.in);
@@ -142,7 +142,6 @@ public class Main
                     }else{
                     health = Double.POSITIVE_INFINITY;
                     System.out.println("God mode enabled (Type \"c_god_mode\" to turn god mode off)");
-                    numCheats+=1;
                     godMode = true;
                 }
                     break;
@@ -167,10 +166,4 @@ public class Main
     private static void interpretTextRoom(){
 
     }
-    
-    private Room roomArray(){
-        return null;
-    }
-    
-    
 }

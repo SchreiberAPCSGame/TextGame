@@ -10,8 +10,15 @@ public class Room
     public static Room[][] roomIn = new Room[5][5];
     public static int x = 2;
     public static int y = 1;
+    public static String name;
+    public static String description;
+    boolean canGoNorth;
+    boolean canGoSouh;
+    boolean canGoWest;
+    boolean canGoEast;
     public Room(Item[] s, Character[] p, String n, String d){
-
+        this.name = name;
+        this.description = description;
     }
 
     public static Room goNorth(){
@@ -47,6 +54,12 @@ public class Room
     }
     
     private void canGo(Room something){
-        
+        switch(something.getName()){
+            case "00":
+        }
+    }
+    
+    private void getName(){
+
     }
 }
