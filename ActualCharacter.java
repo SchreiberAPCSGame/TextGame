@@ -9,10 +9,12 @@ public class ActualCharacter
     String name;
     String description;
     double health;
-    public ActualCharacter(String name, String description, double health){
+    double attack;
+    public ActualCharacter(String name, String description, double health, double attack){
         this.name = name;
         this.description = description;
         this.health = health;
+        this.attack = attack;
     }
 
     public String getDescription()

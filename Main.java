@@ -13,7 +13,7 @@ public class Main
     public static String levelSelected;
     public static Item Item[] = new Item[100];
     public static Character character[] = new Character[100];
-    public static Room room[] = new Room[25];
+    public static Room room[][] = new Room[5][5];
     /**
      * Constructor for objects of class Main
      */
@@ -21,7 +21,7 @@ public class Main
     {
         while(true){
             createItems();
-            createRooms();
+            Room.createRooms();
             boolean restart = true;
             System.out.println("Enter your name");
             Scanner kbReader = new Scanner(System.in);
@@ -109,6 +109,7 @@ public class Main
                 System.out.print("c_show_path_traveled");
                 break;
                 case "c_exit":
+                System.out.print('\u000C');
                 System.exit(0);
                 break;
                 case "c_god_mode":
@@ -140,8 +141,7 @@ public class Main
     }
 
     public static Room currentRoom(){
-        Room currentRoomIn = new Room(Item, character, "", "");
-        return currentRoomIn.currentRoom1();
+        return Room.setRoom();
     }
 
     private static void interpretTextRoom(){
@@ -174,6 +174,31 @@ public class Main
         Room o42 = new Room(Item, character, "o42", "More boring cave.");
         Room o43 = new Room(Item, character, "o43", "A dense jungle. Did I mention that it was dark?");
         Room o44 = new Room(Item, character, "o44", "More forest, but much more interesting than the others.");
+        room[0][0] = o00;
+        room[0][1] = o01;
+        room[0][2] = o02;
+        room[0][3] = o03;
+        room[0][4] = o04;
+        room[1][0] = o10;
+        room[1][1] = o11;
+        room[1][2] = o12;
+        room[1][3] = o13;
+        room[1][4] = o14;
+        room[2][0] = o20;
+        room[2][1] = o21;
+        room[2][2] = o22;
+        room[2][3] = o23;
+        room[2][4] = o24;
+        room[3][0] = o30;
+        room[3][1] = o31;
+        room[3][2] = o32;
+        room[3][3] = o33;
+        room[3][4] = o34;
+        room[4][0] = o40;
+        room[4][1] = o41;
+        room[4][2] = o42;
+        room[4][3] = o43;
+        room[4][4] = o44;
     }
 
     private static void createItems(){
@@ -198,8 +223,8 @@ public class Main
         Item[8] = maximiaDilator;
         Item items00[] = new Item[5];
         items00[0] = Item[6];
+        Item items[] = new Item[5];
         /*Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
         Item items00[] = new Item[5];
         Item items00[] = new Item[5];
         Item items00[] = new Item[5];
@@ -213,12 +238,12 @@ public class Main
     }
     
     private static void createCharacters(){
-        ActualCharacter tRex = new ActualCharacter("T-rex", "Fearsome and giant, the T-rex rules the jungles", 200.0);
-        ActualCharacter velociraptor = new ActualCharacter("Velociraptor", "Fast powerful, be wary of these fellows.", 35.0);
-        ActualCharacter stegosaurus = new ActualCharacter("Stegosaurus", "Large and powerful, they can be pretty mean. Thank the stars that they are herbivors.", 70.0);
-        ActualCharacter pterodactyl = new ActualCharacter("Pterodactyl", "Death from above", 30.0);
-        ActualCharacter eT = new ActualCharacter("E.T", "\"E.T phone home\". Seems pretty friendly.", 10.0);
-        ActualCharacter lGM = new ActualCharacter("Little Green Men", "They are so cute with their three eyes that you'll want to hug them.", 15.0);
-        ActualCharacter shadowHunter = new ActualCharacter("Little Green Men", "They are so cute with their three eyes that you'll want to hug them.", 15.0);
+        ActualCharacter tRex = new ActualCharacter("T-rex", "Fearsome and giant, the T-rex rules the jungles", 200.0, 30.0);
+        ActualCharacter velociraptor = new ActualCharacter("Velociraptor", "Fast powerful, be wary of these fellows.", 35.0,20.0);
+        ActualCharacter stegosaurus = new ActualCharacter("Stegosaurus", "Large and powerful, they can be pretty mean. Thank the stars that they are herbivors.", 70.0,10000.0);
+        ActualCharacter pterodactyl = new ActualCharacter("Pterodactyl", "Death from above", 30.0, 10.0);
+        ActualCharacter eT = new ActualCharacter("E.T", "\"E.T phone home\". Seems pretty friendly.", 10.0, 0.0);
+        ActualCharacter lGM = new ActualCharacter("Little Green Men", "They are so cute with their three eyes that you'll want to hug them.", 15.0,0.0);
+        ActualCharacter shadowHunter = new ActualCharacter("Shadow Hunter", "The final boss of the gam. You can bet that it's mean.", 500.0, 100.0);
     }
 }
