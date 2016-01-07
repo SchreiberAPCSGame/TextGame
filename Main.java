@@ -14,6 +14,8 @@ public class Main
     public static Item Item[] = new Item[100];
     public static Character character[] = new Character[100];
     public static Room room[][] = new Room[5][5];
+    private static int x = 1;
+    private static int y = 2;
     /**
      * Constructor for objects of class Main
      */
@@ -28,39 +30,47 @@ public class Main
             String name = kbReader.nextLine();
             System.out.println("\nPlease choose your level:\n\tEasy\n\tMedium\n\tHard\n\tImpossible insane\n\tCompletely Impossible\n");
             String level = kbReader.nextLine();
-            switch (level.toLowerCase()){
-                case "completely impossible":
-                System.out.println("\n\nYou wake up in a cave alone. As you look out the entrance,\nyou see a dinosaur. It looks like a little baby.");
-                System.out.println("The dinosaur pounces on you when you just stare at him.\nGame over.\n\nWould you like to restart the game (yes to restart or any other key to exit)?");
-                String continueOn = kbReader.nextLine();
-                if(continueOn.equalsIgnoreCase("yes")) continue;
-                else System.exit(0);
-                break;
-                case "easy":
-                health = 100;
-                levelSelected="easy";
-                break;
-                case "medium":
-                health = 75;
-                levelSelected="medium";
-                break;
-                case "hard":
-                levelSelected="hard";
-                health = 65;
-                break;
-                case "impossible insane":
-                levelSelected="ii";
-                health = 50;
-                break;
-                default: 
-                System.out.println("That is not a valid level. Please put in a level again.");
-                String levelAgain = kbReader.nextLine();
-                break;
+            boolean validLevel = false;
+            while(!validLevel){
+                switch (level.toLowerCase()){
+                    case "completely impossible":
+                    System.out.println("\n\nYou wake up in a cave alone. As you look out the entrance,\nyou see a dinosaur. It looks like a little baby.");
+                    System.out.println("The dinosaur pounces on you when you just stare at him.\nGame over.\n\nWould you like to restart the game (yes to restart or any other key to exit)?");
+                    String continueOn = kbReader.nextLine();
+                    if(continueOn.equalsIgnoreCase("yes")) continue;
+                    else System.exit(0);
+                    break;
+                    case "easy":
+                    health = 100;
+                    levelSelected="easy";
+                    validLevel = true;
+                    break;
+                    case "medium":
+                    health = 75;
+                    levelSelected="medium";
+                    validLevel = true;
+                    break;
+                    case "hard":
+                    levelSelected="hard";
+                    health = 65;
+                    validLevel = true;
+                    break;
+                    case "impossible insane":
+                    levelSelected="ii";
+                    health = 50;
+                    validLevel = true;
+                    break;
+                    default: 
+                    System.out.println("That is not a valid level. Please put in a level again.");
+                    String levelAgain = kbReader.nextLine();
+                    break;
+                }
             }
             System.out.println("\n\nYou wake up with a head ache. Looking around, you don't see anything that you're familiar with.");
             System.out.println("You are in the mouth of a cave. In the far corner, you see a broken time machine.");
             System.out.println("To the east (your right), there is a jungle. To the west (your left), there are tunnels.\n");
             System.out.println("Pro tip: during any time of the game, you can type \"show_cheats\" should you ever need help.\n");
+            System.out.println("This spot is where you crashed your time machine into peices. Thinking of you present life gives you determination to find all the missing parts.");
             while(restart){
                 String response = kbReader.nextLine();
                 if(response.equalsIgnoreCase("c_restart")){
@@ -140,65 +150,12 @@ public class Main
         }
     }
 
-    public static Room currentRoom(){
-        return Room.setRoom();
+    public void currentRoom(int y, int x){
+        
     }
 
     private static void interpretTextRoom(){
 
-    }
-
-    private static void createRooms(){
-        Room o00 = new Room(Item, character, "o00", "Here lies the ultimate boss and the most important part of the time machine.");
-        Room o01 = new Room(Item, character, "o01", "Big aliens are located here. It is suggested that you have strong armor and weapons equipped.");
-        Room o02 = new Room(Item, character, "o02", "A wall stands in you're way. What are you going to do about it?");
-        Room o03 = new Room(Item, character, "o03", "Big and mean, these aliens located here aren't friendly.");
-        Room o04 = new Room(Item, character, "o04", "A sparse forest.");
-        Room o10 = new Room(Item, character, "o10", "A dark cave room.");
-        Room o11 = new Room(Item, character, "o11", "An indestructable cave wall");
-        Room o12 = new Room(Item, character, "o12", "An impassable mountain.");
-        Room o13 = new Room(Item, character, "o13", "The tar pits are a perilous place.");
-        Room o14 = new Room(Item, character, "o14", "A dense jungle with danger lurking in every shadow.");
-        Room o20 = new Room(Item, character, "o20", "Part a the cave entrance. This is the first step into the caves.");
-        Room o21 = new Room(Item, character, "o21", "The mouth of the cave. You spawn here.");
-        Room o22 = new Room(Item, character, "o22", "The jungles here contain an unexpected surprise.");
-        Room o23 = new Room(Item, character, "o23", "More jungle, more unknown.");
-        Room o24 = new Room(Item, character, "o24", "This is quite and explosive part of the jungle.");
-        Room o30 = new Room(Item, character, "o30", "A dark cave. Who knows who/what lurks here?");
-        Room o31 = new Room(Item, character, "o31", "A big cavern.");
-        Room o32 = new Room(Item, character, "o32", "Jungle. Nothing but jungle, right?");
-        Room o33 = new Room(Item, character, "o33", "A passable mountain. But don't be so sure that you'll make it out alive.");
-        Room o34 = new Room(Item, character, "o34", "A one way coridorr.");
-        Room o40 = new Room(Item, character, "o40", "Another room to the cave. Who would have thought?");
-        Room o41 = new Room(Item, character, "o41", "A big pool of water.");
-        Room o42 = new Room(Item, character, "o42", "More boring cave.");
-        Room o43 = new Room(Item, character, "o43", "A dense jungle. Did I mention that it was dark?");
-        Room o44 = new Room(Item, character, "o44", "More forest, but much more interesting than the others.");
-        room[0][0] = o00;
-        room[0][1] = o01;
-        room[0][2] = o02;
-        room[0][3] = o03;
-        room[0][4] = o04;
-        room[1][0] = o10;
-        room[1][1] = o11;
-        room[1][2] = o12;
-        room[1][3] = o13;
-        room[1][4] = o14;
-        room[2][0] = o20;
-        room[2][1] = o21;
-        room[2][2] = o22;
-        room[2][3] = o23;
-        room[2][4] = o24;
-        room[3][0] = o30;
-        room[3][1] = o31;
-        room[3][2] = o32;
-        room[3][3] = o33;
-        room[3][4] = o34;
-        room[4][0] = o40;
-        room[4][1] = o41;
-        room[4][2] = o42;
-        room[4][3] = o43;
-        room[4][4] = o44;
     }
 
     private static void createItems(){
@@ -234,9 +191,9 @@ public class Main
         Item items00[] = new Item[5];
         Item items00[] = new Item[5];
         Item items00[] = new Item[5];
-        */
+         */
     }
-    
+
     private static void createCharacters(){
         ActualCharacter tRex = new ActualCharacter("T-rex", "Fearsome and giant, the T-rex rules the jungles", 200.0, 30.0);
         ActualCharacter velociraptor = new ActualCharacter("Velociraptor", "Fast powerful, be wary of these fellows.", 35.0,20.0);

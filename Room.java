@@ -7,49 +7,40 @@
 public class Room
 {
     public static String pathTaken = "";
-    private static int x = 2;
-    private static int y = 1;
+    private static int x = 1;
+    private static int y = 2;
     public static String name;
     public static String description;
-    public static Room current;
-    public static Item Item[] = new Item[100];
-    public static Character character[] = new Character[100];
+    public static Item Item[] = new Item[20];
+    public static Character character[] = new Character[20];
     public static Room room[][] = new Room[5][5];
     public Room(Item[] s, Character[] p, String name, String description){
         this.name = name;
         this.description = description;
     }
-    
-    public static Room setRoom(){
-        //current = room[y][x];
-        return current;
+
+    public static Room currentRoomIn(int y, int x){
+        return null;
     }
 
-    public static void  goNorth(){
-        if(canGo("north")){ y+=1; System.out.println(Main.currentRoom().description);
-        pathTaken += "North -> ";}
-        else System.out.println("You cannot go that direction");
+    public static Room goNorth(){
+        whereCanGo(y, x, "north");
+        return currentRoomIn(y,x);
     }
 
-    public static void goSouth(){
-        Room.canGo("south");
-        pathTaken += "South -> ";
-        if(y==0){}
-        else{ y-=1; System.out.println(Main.currentRoom().description);}
+    public static String goSouth(){
+        whereCanGo(y, x, "south");
+        return description;
     }
 
-    public static void goEast(){
-        canGo("east");
-        pathTaken += "East -> ";
-        if(x==4) {}
-        else{ x+=1; System.out.println(Main.currentRoom().description);}
+    public static Room goEast(){
+        whereCanGo(y, x, "east");
+        return currentRoomIn(y,x);
     }
 
-    public static void goWest(){
-        canGo("west");
-        pathTaken += "West -> ";
-        if(x==0) {}
-        else{ x-=1; System.out.println(Main.currentRoom().description);}
+    public static Room goWest(){
+        whereCanGo(y, x, "west");
+        return currentRoomIn(y,x);
     }
 
     public static void pathTraveled(){
@@ -57,218 +48,193 @@ public class Room
     }
 
     public String getDescription(){
-        return description;
-    }
-
-    private static boolean canGo(String direction){
-        boolean canGoNorth = false;
-        boolean canGoSouth = false;
-        boolean canGoEast = false;
-        boolean canGoWest = false;
-        switch(setRoom().name){
-            case "o00":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o01":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o02":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o03":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o04":
-            canGoNorth = false;
-            canGoSouth = true;
-            canGoEast = false;
-            canGoWest = true;
-            break;
-            case "o10":
-            canGoNorth = false;
-            canGoSouth = true;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o11":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = false;
-            canGoWest = false;
-            break;
-            case "o12":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = false;
-            canGoWest = false;
-            break;
-            case "o13":
-            canGoNorth = true;
-            canGoSouth = true;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o14":
-            canGoNorth = true;
-            canGoSouth = true;
-            canGoEast = false;
-            canGoWest = false;
-            break;
-            case "o20":
-            canGoNorth = true;
-            canGoSouth = true;
-            canGoEast = false;
-            canGoWest = false;
-            break;
-            case "o21":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o22":
-            canGoNorth = false;
-            canGoSouth = true;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o23":
-            canGoNorth = false;
-            canGoSouth = true;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o24":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o30":
-            canGoNorth = true;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o31":
-            canGoNorth = false;
-            canGoSouth = true;
-            canGoEast = false;
-            canGoWest = true;
-            break;
-            case "o32":
-            canGoNorth = true;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o33":
-            canGoNorth = true;
-            canGoSouth = true;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o34":
-            canGoNorth = true;
-            canGoSouth = true;
-            canGoEast = false;
-            canGoWest = false;
-            break;
-            case "o40":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = false;
-            break;
-            case "o41":
-            canGoNorth = true;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o42":
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o43":
-            canGoNorth = true;
-            canGoSouth = false;
-            canGoEast = true;
-            canGoWest = true;
-            break;
-            case "o44":
-            canGoNorth = true;
-            canGoSouth = false;
-            canGoEast = false;
-            canGoWest = true;
-            break;
-            default: 
-            canGoNorth = false;
-            canGoSouth = false;
-            canGoEast = false;
-            canGoWest = false;
-        }
-        boolean canGoSomeWhere = false;
-        switch(direction.toLowerCase()){
-            case "north":
-            if(canGoNorth)  canGoSomeWhere = true;
-            else{ System.out.println("You cannot go that direction."); canGoSomeWhere = false;}
-            break;
-            case "south":
-            if(canGoSouth) canGoSomeWhere = true;
-            else{ System.out.println("You cannot go that direction."); canGoSomeWhere = false;}
-            break;
-            case "west":
-            if(canGoWest) canGoSomeWhere = true;
-            else{ System.out.println("You cannot go that direction."); canGoSomeWhere = false;}
-            break;
-            case "east":
-            if(canGoEast) canGoSomeWhere = true;
-            else{ System.out.println("You cannot go that direction."); canGoSomeWhere = false;}
-        }
-        return canGoSomeWhere;
+        return currentRoomIn(y,x).description;
     }
     
+    public static void whereCanGo(int a, int b, String direction){
+        String RoomNumber = "" + a;
+        RoomNumber += b;
+        switch(RoomNumber){
+            case "00":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("Burley aggresive aliens are located here. wits and common sense will be your greatest."); x+=1;}
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "01":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("Rubble from the wall you blew up."); x+=1;}
+            else{ System.out.println("Here lies the ultimate boss and the most important part of the time machine."); x-=1;}
+            break;
+            case "02":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("Big and mean, these aliens located here aren't friendly."); x+=1;}
+            else{ System.out.println("Burley aggresive aliens are located here. wits and common sense will be your greatest."); x-=1;}
+            break;
+            case "03":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("Tar pits"); y+=1;}
+            else if(direction.equals("east")){ System.out.println("A sparse forest."); x+=1;}
+            else{ System.out.println("A wall stands in you're way. What are you going to do about it?"); x-=1;}
+            break;
+            case "04":            
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("A dense jungle with danger lurking in every shadow."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("Forest"); x-=1;}
+            break;
+            case "10":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("Walking down the clostaphobic halls of the cave, light can be seen not to far ahead. You walk into a cavern, your breathing being the only thing making noise. In the middle of the room, a pond of crystal clear water shimmers from the light above from outside. You noticesomething something oddly refelective at the bottom... \n there is a path to the north and the south"); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "11":
+            if(direction.equals("north")){ System.out.println("Big and mean, these aliens located here aren't friendly."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("More jungle, more unknown."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "12":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); ;}
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "13":
+            if(direction.equals("north")){ System.out.println("Big and mean, these aliens located here aren't friendly."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("More jungle, more unknown."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "14":
+            if(direction.equals("north")){ System.out.println("A sparse forest."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("This is quite and explosive part of the jungle."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "20":
+            if(direction.equals("north")){ System.out.println("Light slowly fades and fades until you can barely see you're own hands infront of your face. Torches suddenly light and you are in a tight fitting room within the caves. There is a door infront of you, but first you need all of your time machine parts!"); y-=1;}
+            else if(direction.equals("south")){ System.out.println("A dark cave. Who knows who/what lurks here?"); y+=1;}
+            else if(direction.equals("east")){ System.out.println("This spot is where you crashed your time machine into pieces. Thinking of your present life gives you determination to find all the missing parts."); x+=1;}
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "21":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("You take your first step into the unknown wilderness."); x+=1;}
+            else{ System.out.println("Walking down the clostaphobic halls of the cave, light can be seen not to far ahead. You walk into a cavern, your breathing being the only thing making noise. In the middle of the room, a pond of crystal clear water shimmers from the light above from outside. You notice something something oddly refelective at the bottom... \n there is a path to the north and the south"); x-=1;}
+            break;
+            case "22":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("Jungle. Nothing but jungle, right?"); y+=1;}
+            else if(direction.equals("east")){ System.out.println("More jungle, more unknown."); x+=1;}
+            else{ System.out.println("This spot is where you crashed your time machine into pieces. Thinking of your present life gives you determination to find all the missing parts."); x-=1;}
+            break;
+            case "23":
+            if(direction.equals("north")){ System.out.println("You come across a small canyon filled up about half way with bubbly, steamy tar. The large gap is to large to jump across."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("A passable mountain. But don't be so sure that you'll make it out alive."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("This is quite and explosive part of the jungle."); x+=1;}
+            else{ System.out.println("You take your first step into the unknown wilderness."); x-=1;}
+            break;
+            case "24":
+            if(direction.equals("north")){ System.out.println("A dense jungle with danger lurking in every shadow."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("I'm afraid that that is a one way corridor."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("More jungle, more unknown."); x-=1;}
+            break;
+            case "30":
+            if(direction.equals("north")){ System.out.println("Walking down the clostaphobic halls of the cave, light can be seen not to far ahead. You walk into a cavern, your breathing being the only thing making noise. In the middle of the room, a pond of crystal clear water shimmers from the light above from outside. You noticesomething something oddly refelective at the bottom... \n there is a path to the north and the south"); y-=1;}
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("A big cavern."); x+=1;}
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "31":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("A big pool of water."); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("A dark cave. Who knows who/what lurks here?"); x-=1;}
+            break;
+            case "32":
+            if(direction.equals("north")){ System.out.println("You take your first step into the unknown wilderness."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("A passable mountain. But don't be so sure that you'll make it out alive."); x+=1;}
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "33":
+            if(direction.equals("north")){ System.out.println("More jungle, more unknown.");y-=1;}
+            else if(direction.equals("south")){ System.out.println("A dense jungle. Did I mention that it was dark?"); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("Jungle. Nothing but jungle, right?"); x-=1;}
+            break;
+            case "34":
+            if(direction.equals("north")){ System.out.println("This is quite and explosive part of the jungle."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("E.T. is meditating in the middle of a clearing. He looks at you as if he was expecting you to walk through the forest"); y+=1;}
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "40":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("A big pool of water."); x+=1;}
+            else{ System.out.println("You cannot go in that direction."); }
+            break;
+            case "41":
+            if(direction.equals("north")){ System.out.println("A big cavern."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("More boring cave."); x+=1;}
+            else{ System.out.println("Another room to the cave. Who would have thought?"); x-=1;}
+            break;
+            case "42":
+            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("A dense jungle. Did I mention that it was dark?"); x+=1;}
+            else{ System.out.println("A big pool of water."); x-=1;}
+            break;
+            case "43":
+            if(direction.equals("north")){ System.out.println("A passable mountain. But don't be so sure that you'll make it out alive."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("E.T. is meditating in the middle of a clearing. He looks at you as if he was expecting you to walk through the forest."); x+=1;}
+            else{ System.out.println("More boring cave."); x-=1;}
+            break;
+            case "44":
+            if(direction.equals("north")){ System.out.println("A one way coridor."); y-=1;}
+            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
+            else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
+            else{ System.out.println("A dense jungle. Did I mention that it was dark?"); x-=1;}
+            break;
+        }
+        System.out.println("\n");
+    }
+
     public static void createRooms(){
         Room o00 = new Room(Item, character, "o00", "Here lies the ultimate boss and the most important part of the time machine.");
-        Room o01 = new Room(Item, character, "o01", "Big aliens are located here. It is suggested that you have strong armor and weapons equipped.");
+        Room o01 = new Room(Item, character, "o01", "Burley aggresive aliens are located here. Wits and common sense will be your greatest.");
         Room o02 = new Room(Item, character, "o02", "A wall stands in you're way. What are you going to do about it?");
         Room o03 = new Room(Item, character, "o03", "Big and mean, these aliens located here aren't friendly.");
         Room o04 = new Room(Item, character, "o04", "A sparse forest.");
-        Room o10 = new Room(Item, character, "o10", "A dark cave room.");
+        Room o10 = new Room(Item, character, "o10", "Light slowly fades and fades until you can barely see you're own hands infront of your face. Torches suddenly light and you are in a tight fitting room within the caves. There is a door infront of you, but first you need all of your time machine parts!");
         Room o11 = new Room(Item, character, "o11", "An indestructable cave wall");
-        Room o12 = new Room(Item, character, "o12", "An impassable mountain.");
-        Room o13 = new Room(Item, character, "o13", "The tar pits are a perilous place.");
+        Room o12 = new Room(Item, character, "o12", "You walk to the steep mountain face and stare up. You know you will survive the climb, but just barely.");
+        Room o13 = new Room(Item, character, "o13", "You come across a small canyon filled up about half way with bubbly, steamy tar. The large gap is too large to jump across.");
         Room o14 = new Room(Item, character, "o14", "A dense jungle with danger lurking in every shadow.");
-        Room o20 = new Room(Item, character, "o20", "Part a the cave entrance. This is the first step into the caves.");
-        Room o21 = new Room(Item, character, "o21", "The mouth of the cave. You spawn here.");
-        Room o22 = new Room(Item, character, "o22", "The jungles here contain an unexpected surprise.");
+        Room o20 = new Room(Item, character, "o20", "Walking down the clostaphobic halls of the cave, light can be seen not to far ahead. You walk into a cavern, your breathing being the only thing making noise. In the middle of the room, a pond of crystal clear water shimmers from the light above from outside. You noticesomething something oddly refelective at the bottom... \n there is a path to the north and the south");
+        Room o21 = new Room(Item, character, "o21", "This spot is where you crashed your time machine into pieces. Thinking of you present life gives you determination to find all the missing parts.");
+        Room o22 = new Room(Item, character, "o22", "You take your first step into the unknown wilderness.");
         Room o23 = new Room(Item, character, "o23", "More jungle, more unknown.");
         Room o24 = new Room(Item, character, "o24", "This is quite and explosive part of the jungle.");
         Room o30 = new Room(Item, character, "o30", "A dark cave. Who knows who/what lurks here?");
         Room o31 = new Room(Item, character, "o31", "A big cavern.");
         Room o32 = new Room(Item, character, "o32", "Jungle. Nothing but jungle, right?");
         Room o33 = new Room(Item, character, "o33", "A passable mountain. But don't be so sure that you'll make it out alive.");
-        Room o34 = new Room(Item, character, "o34", "A one way coridorr.");
+        Room o34 = new Room(Item, character, "o34", "A one way coridor.");
         Room o40 = new Room(Item, character, "o40", "Another room to the cave. Who would have thought?");
         Room o41 = new Room(Item, character, "o41", "A big pool of water.");
         Room o42 = new Room(Item, character, "o42", "More boring cave.");
         Room o43 = new Room(Item, character, "o43", "A dense jungle. Did I mention that it was dark?");
-        Room o44 = new Room(Item, character, "o44", "More forest, but much more interesting than the others.");
+        Room o44 = new Room(Item, character, "o44", "E.T. is meditating in the middle of a clearing. He looks at you as if he was expecting you to walk through the forest");
         room[0][0] = o00;
         room[0][1] = o01;
         room[0][2] = o02;
