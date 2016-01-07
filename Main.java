@@ -7,11 +7,11 @@ import java.util.Scanner;
  */
 public class Main
 {
-    public int score;
-    public static double health = 100;
-    public static boolean godMode = false;
-    public static String levelSelected;
-    public static Item Item[] = new Item[100];
+    private int score;
+    private static double health = 100;
+    private static boolean godMode = false;
+    private static String levelSelected;
+    public static ActualWeapon ActualWeapon[] = new ActualWeapon[100];
     public static Character character[] = new Character[100];
     public static Room room[][] = new Room[5][5];
     private static int x = 1;
@@ -22,8 +22,9 @@ public class Main
     public static void main(String[] args)
     {
         while(true){
-            createItems();
+            createActualWeapons();
             Room.createRooms();
+            createCharacters();
             boolean restart = true;
             System.out.println("Enter your name");
             Scanner kbReader = new Scanner(System.in);
@@ -158,40 +159,42 @@ public class Main
 
     }
 
-    private static void createItems(){
-        Item forceField = new Item("Force Field", "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.");
-        Item explosives = new Item("Explosives", "Low intensity explosives that can used once to blow up walls");
-        Item lightSaber = new Item("Lightsaber", "Plasma blade powered by a kyber crystal, also is very powerful");
-        Item phaser = new Item("Phaser", "Particle light gun capable of shooting through any substance");
-        Item rope = new Item("Rope", "Very long piece or rope made from the strongest coth on the planet");
-        Item vortexTimeDistorter = new Item("Vortex Time Distorter", "Piece of your broken time machine! Bring back to machine site.");
-        Item harpaxPowerStone = new Item("Harper Power Stone", "Piece of your broken time machine! Bring back to machine site");
-        Item ciceriaPortal = new Item("Ciceria Portal", "Piece of your broken time machine! Bring back to machine site");
-        Item nasenniaHyperDrive = new Item("Nasennia Hyperdrive", "Piece of your broken time machine! Bring back to machine site");
-        Item maximiaDilator = new Item("Maximia Dialator", "Piece of your broken time machine! Bring back to machine site");
-        Item[0] = forceField;
-        Item[1] = explosives;
-        Item[2] = lightSaber;
-        Item[3] = phaser;
-        Item[4] = rope;
-        Item[5] = vortexTimeDistorter;
-        Item[6] = harpaxPowerStone;
-        Item[7] = nasenniaHyperDrive;
-        Item[8] = maximiaDilator;
-        Item items00[] = new Item[5];
-        items00[0] = Item[6];
-        Item items[] = new Item[5];
-        /*Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-        Item items00[] = new Item[5];
-         */
+    private static void createActualWeapons(){
+        ActualWeapon forceField = new ActualWeapon("Force Field", "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.", 0, Double.POSITIVE_INFINITY);
+        ActualWeapon explosives = new ActualWeapon("Explosives", "Low intensity explosives that can used once to blow up some walls.", 0, 0);
+        ActualWeapon lightSaber = new ActualWeapon("Lightsaber", "Plasma blade powered by a kyber crystal, also is very powerful", 70, 0);
+        ActualWeapon phaser = new ActualWeapon("Phaser", "Particle light gun capable of shooting through any substance", 20, 0);
+        ActualWeapon rope = new ActualWeapon("Rope", "Very long piece or rope made from the strongest coth on the planet", 0, 0);
+        ActualWeapon vortexTimeDistorter = new ActualWeapon("Vortex Time Distorter", "Piece of your broken time machine! Bring back to machine site.", 0, 0);
+        ActualWeapon harpaxPowerStone = new ActualWeapon("Harper Power Stone", "Piece of your broken time machine! Bring back to machine site", 0, 0);
+        ActualWeapon ciceriaPortal = new ActualWeapon("Ciceria Portal", "Piece of your broken time machine! Bring back to machine site", 0, 0);
+        ActualWeapon nasenniaHyperDrive = new ActualWeapon("Nasennia Hyperdrive", "Piece of your broken time machine! Bring back to machine site", 0, 0);
+        ActualWeapon maximiaDilator = new ActualWeapon("Maximia Dialator", "Piece of your broken time machine! Bring back to machine site", 0, 0);
+        ActualWeapon sword = new ActualWeapon("Sword", "A weapon that is capable of cutting down enemies in droves, the sword is no toy.", 30, 0);
+        ActualWeapon bread = new ActualWeapon("Bread", "Even though it can't attack enemies, bread is still useful to have. It will allow to gain health back.", 0, 0);
+        ActualWeapon khalitShield = new ActualWeapon("Khalit Shield", "The Khalits were people who were famous for their weapons and armor.\nUnfortunatley, their shields and swords didn't stop the volcanoe from erupting.", 0, 30); 
+        ActualWeapon[0] = forceField;
+        ActualWeapon[1] = explosives;
+        ActualWeapon[2] = lightSaber;
+        ActualWeapon[3] = phaser;
+        ActualWeapon[4] = rope;
+        ActualWeapon[5] = vortexTimeDistorter;
+        ActualWeapon[6] = harpaxPowerStone;
+        ActualWeapon[7] = nasenniaHyperDrive;
+        ActualWeapon[8] = maximiaDilator;
+        ActualWeapon[9] = sword;
+        ActualWeapon[10] = bread;
+        ActualWeapon[11] = khalitShield;
+        ActualWeapon items00[] = new ActualWeapon[5];
+        items00[0] = ActualWeapon[6];
+        ActualWeapon items03[] = new ActualWeapon[5];
+        items03[0] = ActualWeapon[3];
+        ActualWeapon items04[] = new ActualWeapon[5];
+        items04[0] = ActualWeapon[10];
+        ActualWeapon items10[] = new ActualWeapon[5];
+        items10[0] = ActualWeapon[4];
+        ActualWeapon items14[] = new ActualWeapon[5];
+        items14[0] = khalitShield;
     }
 
     private static void createCharacters(){

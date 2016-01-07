@@ -22,53 +22,18 @@ public class Item
     }
     
     private String getDescription1(){
-        String getDesc = "";
-        switch (name.toLowerCase()){
-            case "force field":
-                getDesc = "The force field uses a small crystal that protects you an enemy.\nBe careful, because the crystal will break after you have been attack once.";
-                break;
-            case "explosives":
-                getDesc = "";
-                break;
-            case "lightsaber":
-                getDesc = "";
-                break;
-            case "phaser":
-                getDesc = "";
-                break;
-            case "bicycle":
-                getDesc = "";
-                break;
-            case "rope":
-                getDesc = "";
-            case "axe":
-                getDesc = "";
-            case "vortex time distorter":
-                getDesc = "";
-            case "harpax power stone":
-                getDesc = "";
-            case "ciceria portal":
-                getDesc = "";
-            case "nasennia hyper drive":
-                getDesc = "";
-            case "maximia dialator":
-                getDesc = "";
-            default:
-                getDesc = "";
-                break;
-        }
-        return getDesc;
+        return description;
     }
     
     public String getName(){
-        return "";
+        return name;
     }
     
     public String name(){
-        return "";
+        return name;
     }
     
     public String description(){
-        return "";
+        return description;
     }
 }
