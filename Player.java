@@ -6,9 +6,13 @@
  */
 public class Player
 {
-    /**
-     * Constructor for objects of class Play
-     */
+    String name;
+    Item startingInventory[] = new Item[1];
+    public Player(String name, Item[] startingInventory){
+        this.name=name;
+        startingInventory[0]=null;
+    }
+    
     public String getName()
     {
        return "";
@@ -17,5 +21,13 @@ public class Player
     public String getDescription()
     {
         return "";
+    }
+    
+    public void attack(Character target){
+
+    }
+    
+    public void equip(Equippable equipment){
+    
     }
 }
