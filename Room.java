@@ -215,12 +215,12 @@ public class Room
         Room o02 = new Room(Item, character, "o02", "A wall stands in you're way. What are you going to do about it?");
         Room o03 = new Room(Item, character, "o03", "Big and mean, these aliens located here aren't friendly.");
         Room o04 = new Room(Item, character, "o04", "A sparse forest.");
-        Room o10 = new Room(Item, character, "o10", "Light slowly fades and fades until you can barely see you're own hands infront of your face. Torches suddenly light and you are in a tight fitting room within the caves. There is a door infront of you, but first you need all of your time machine parts!");
+        Room o10 = new Room(Item, character, "o10", "As you head north, the walls of the cave gradually get narrower. Soon, there isn’t enough space so you have to walk sideways. There isn’t much air down in the caves, so it is becoming harder to breath. Just as you’re about to pass out, you enter a big cavern.");
         Room o11 = new Room(Item, character, "o11", "An indestructable cave wall");
         Room o12 = new Room(Item, character, "o12", "You walk to the steep mountain face and stare up. You know you will survive the climb, but just barely.");
         Room o13 = new Room(Item, character, "o13", "You come across a small canyon filled up about half way with bubbly, steamy tar. The large gap is too large to jump across.");
         Room o14 = new Room(Item, character, "o14", "A dense jungle with danger lurking in every shadow.");
-        Room o20 = new Room(Item, character, "o20", "Walking down the clostaphobic halls of the cave, light can be seen not to far ahead. You walk into a cavern, your breathing being the only thing making noise. In the middle of the room, a pond of crystal clear water shimmers from the light above from outside. You noticesomething something oddly refelective at the bottom... \n there is a path to the north and the south");
+        Room o20 = new Room(Item, character, "o20", "As you descend deeper into the cave, it becomes harder to see. Suddenly, a bright light appeared out of nowhere. Standing in front of you is a cute little green alien. The green alien starts to raise its hand.");
         Room o21 = new Room(Item, character, "o21", "This spot is where you crashed your time machine into pieces. Thinking of you present life gives you determination to find all the missing parts.");
         Room o22 = new Room(Item, character, "o22", "You take your first step into the unknown wilderness.");
         Room o23 = new Room(Item, character, "o23", "More jungle, more unknown.");
