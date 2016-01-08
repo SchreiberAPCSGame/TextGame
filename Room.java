@@ -132,7 +132,7 @@ public class Room
             if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
             else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
             else if(direction.equals("east")){ System.out.println("The forest air around you is damp and cold. There are no clear paths to follow, but from the south you can hear animal calling not to far in the distance"); x+=1;}
-            else{ System.out.println("A dark cave. Who knows who/what lurks here?"); x+=1; y-=1;}
+            else{ System.out.println("A dark cave. Who knows who/what lurks here?"); x-=1; y+=1;}
             break;
             case "22":
             if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
@@ -159,12 +159,12 @@ public class Room
             break;
             case "30":
             if(direction.equals("north")){ System.out.println("As you descend deeper into the cave, it becomes harder to see. Suddenly, a bright light appeared out of nowhere. Standing in front of you is a cute little green alien. The green alien starts to raise its hand"); y-=1;}
-            else if(direction.equals("south")){ System.out.println("You cannot go in that direction."); }
-            else if(direction.equals("east")){ System.out.println("A big cavern."); x+=1;}
+            else if(direction.equals("south")){ System.out.println("A big cavern.");x+=1; }
+            else if(direction.equals("east")){ System.out.println("This spot is where you crashed your time machine into pieces. Thinking of you present life gives you determination to find all the missing parts."); x+=1;y-=1;}
             else{ System.out.println("You cannot go in that direction."); }
             break;
             case "31":
-            if(direction.equals("north")){ System.out.println("You cannot go in that direction."); }
+            if(direction.equals("north")){ System.out.println("As you descend deeper into the cave, it becomes harder to see. Suddenly, a bright light appeared out of nowhere. Standing in front of you is a cute little green alien. The green alien starts to raise its hand.");x-=1;y-=1; }
             else if(direction.equals("south")){ System.out.println("What appears to be a dead end is just a large pool of water. Something is sparkling at the bottom... The only way other than back you can go is east."); y+=1;}
             else if(direction.equals("east")){ System.out.println("You cannot go in that direction."); }
             else{ System.out.println("A dark cave. Who knows who/what lurks here?"); x-=1;}
