@@ -22,10 +22,18 @@ public class ActualWeapon
     }
     
     public double getDamage(){
-        return damage;
+        return this.damage;
     }
     
     public double getProtection(){
-        return protection;
+        return this.protection;
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public String getDescription(){
+        return this.description;
     }
 }

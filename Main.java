@@ -12,10 +12,11 @@ public class Main
     private static boolean godMode = false;
     private static String levelSelected;
     public static ActualWeapon ActualWeapon[] = new ActualWeapon[100];
-    public static Character character[] = new Character[100];
+    public static ActualCharacter character[] = new ActualCharacter[100];
     public static Room room[][] = new Room[5][5];
     private static int x = 1;
     private static int y = 2;
+    private static ActualWeapon inventory[] = new ActualWeapon[100];
     /**
      * Constructor for objects of class Main
      */
@@ -64,6 +65,7 @@ public class Main
                     default: 
                     System.out.println("That is not a valid level. Please put in a level again.");
                     String levelAgain = kbReader.nextLine();
+                    level = levelAgain;
                     break;
                 }
             }
@@ -146,16 +148,42 @@ public class Main
                 break;
                 case "c_show_path_traveled":
                 Room.pathTraveled();
+                break;
+                case "examine":
+                String asdf = "";
+                boolean junk = true;
+                for(int a = 0; a<13; a++){
+                    if(word[i+1].toLowerCase().equals(ActualWeapon[a].getName().toLowerCase())){
+                        asdf = ActualWeapon[a].getName().toLowerCase();
+                    }
+                }
+                if(asdf.equals(word[i+1].toLowerCase())){
+                    for(int z = 0; z<13; z++){
+                        String something = ActualWeapon[z].getName().toLowerCase();
+                        if(something.equals(word[i+1].toLowerCase())) System.out.println(ActualWeapon[z].getDescription());
+                    }
+                }else{
+                    System.out.println(Room.currentRoomSomething());
+                }
+                break;
+                case "take":
+                inventory(Room.roomString());
+                break;
+                case "use":
+                break;
+                case "attack":
+                double amountDamage = 0;
+                for(int v = 0; v<13; v++){
+                    double crappy = inventory[v].getDamage();
+                    if(crappy>amountDamage) amountDamage = crappy;
+                }
+                
             }
             break;
         }
     }
 
-    public void currentRoom(int y, int x){
-        
-    }
-
-    private static void interpretTextRoom(){
+    public void currentRoom(){
 
     }
 
@@ -173,6 +201,7 @@ public class Main
         ActualWeapon sword = new ActualWeapon("Sword", "A weapon that is capable of cutting down enemies in droves, the sword is no toy.", 30, 0);
         ActualWeapon bread = new ActualWeapon("Bread", "Even though it can't attack enemies, bread is still useful to have. It will allow to gain health back.", 0, 0);
         ActualWeapon khalitShield = new ActualWeapon("Khalit Shield", "The Khalits were people who were famous for their weapons and armor.\nUnfortunatley, their shields and swords didn't stop the volcanoe from erupting.", 0, 30); 
+        ActualWeapon bodyArmor = new ActualWeapon("Body Armor", "Made of the finest steel forged by the Nazreth people, this armor can mean the diffence between life an death.", 0, 20);
         ActualWeapon[0] = forceField;
         ActualWeapon[1] = explosives;
         ActualWeapon[2] = lightSaber;
@@ -185,16 +214,99 @@ public class Main
         ActualWeapon[9] = sword;
         ActualWeapon[10] = bread;
         ActualWeapon[11] = khalitShield;
+        ActualWeapon[12] = bodyArmor;
         ActualWeapon items00[] = new ActualWeapon[5];
         items00[0] = ActualWeapon[6];
         ActualWeapon items03[] = new ActualWeapon[5];
         items03[0] = ActualWeapon[3];
         ActualWeapon items04[] = new ActualWeapon[5];
-        items04[0] = ActualWeapon[10];
+        items04[1] = ActualWeapon[8];
         ActualWeapon items10[] = new ActualWeapon[5];
         items10[0] = ActualWeapon[4];
         ActualWeapon items14[] = new ActualWeapon[5];
         items14[0] = khalitShield;
+        ActualWeapon items20[] = new ActualWeapon[5];
+        items20[0] = ActualWeapon[7];
+        ActualWeapon items23[] = new ActualWeapon[5];
+        items23[0] = ActualWeapon[12];
+        ActualWeapon items24[] = new ActualWeapon[5];
+        items24 [0] = ActualWeapon[1];
+        ActualWeapon items32[] = new ActualWeapon[5];
+        items32[0] = ActualWeapon[8];
+        ActualWeapon items42[] = new ActualWeapon[5];
+        items42[0] = ActualWeapon[10];
+    }
+
+    private static void inventory(String haha){
+        String something = "items" + haha;
+        int c = 0;
+        switch(something){
+            case "items00":
+            c = 6;
+            break;
+            case "items01":
+            break;
+            case "items02":
+            break;
+            case "items03":
+            c = 3;
+            break;
+            case "items04":
+            c = 8;
+            break;
+            case "items10":
+            c = 4;
+            break;
+            case "items11":
+            break;
+            case "items12":
+            break;
+            case "items13":
+            break;
+            case "items14":
+            c = 11;
+            break;
+            case "items20":
+            c = 7;
+            break;
+            case "items21":
+            break;
+            case "items22":
+            break;
+            case "items23":
+            c = 12;
+            break;
+            case "items24":
+            c = 1;
+            break;
+            case "items30":
+            break;
+            case "items31":
+            break;
+            case "items32":
+            c = 8;
+            break;
+            case "items33":
+            break;
+            case "items34":
+            break;
+            case "items40":
+            break;
+            case "items41":
+            break;
+            case "items42":
+            c = 10;
+            break;
+            case "items43":
+            break;
+            case "items44":
+            break;
+            default:
+            System.out.println("There is nothing to equip");
+        }
+        if(ActualWeapon[c] == null) System.out.println("There is nothing to equip");
+        inventory[c] = ActualWeapon[c];
+        ActualWeapon[c] = null;
     }
 
     private static void createCharacters(){
@@ -205,5 +317,21 @@ public class Main
         ActualCharacter eT = new ActualCharacter("E.T", "\"E.T phone home\". Seems pretty friendly.", 10.0, 0.0);
         ActualCharacter lGM = new ActualCharacter("Little Green Men", "They are so cute with their three eyes that you'll want to hug them.", 15.0,0.0);
         ActualCharacter shadowHunter = new ActualCharacter("Shadow Hunter", "The final boss of the gam. You can bet that it's mean.", 500.0, 100.0);
+        ActualCharacter krackisa = new ActualCharacter("Krackisa", "Legendary and feared, the Krackisa can spew deadly green fire from its mouth. Take great caution.", 70, 60);
+        character[0] = tRex;
+        character[1] = velociraptor;
+        character[2] = stegosaurus;
+        character[3] = pterodactyl;
+        character[4] = eT;
+        character[5] = lGM;
+        character[6] = shadowHunter;
+    }
+    
+    public static void changeHealth(int a){
+        health -= a;
+        if(health<=0){
+            System.out.println("You are dead. Thank you for playing.");
+            System.exit(0);
+        }
     }
 }
