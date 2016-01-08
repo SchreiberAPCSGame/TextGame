@@ -1,34 +1,33 @@
-
 /**
  * Write a description of class Play here.
  * 
- * @author (your name) 
+ * @author John Chen
  * @version (a version number or a date)
  */
 public class Player
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Play
-     */
-    public void Play()
+    String name;
+    Item startingInventory[] = new Item[1];
+    public Player(String name, Item[] startingInventory){
+        this.name=name;
+        startingInventory[0]=null;
+    }
+    
+    public String getName()
     {
-        // initialise instance variables
-        ;
-        
+       return "";
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public String getDescription()
     {
-        // put your code here
-        return x + y;
+        return "";
+    }
+    
+    public void attack(Character target){
+
+    }
+    
+    public void equip(Equippable equipment){
+    
     }
 }

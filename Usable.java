@@ -2,32 +2,36 @@
 /**
  * Write a description of class Usable here.
  * 
- * @author (your name) 
+ * @author John Chen
  * @version (a version number or a date)
  */
 public class Usable
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    String name;
+    String description;
     /**
      * Constructor for objects of class Usable
      */
-    public Usable()
+    public Usable(String name, String description)
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.description = description;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public String getDescription()
     {
-        // put your code here
-        return x + y;
+        return this.description;
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public void use(){
+
+    }
+    
+    public void use(Character target){
+
     }
 }
